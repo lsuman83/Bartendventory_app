@@ -15,6 +15,7 @@ group :development do
   gem 'pry'
   gem 'bcrypt'
   gem 'tux'
+  gem 'session_secret_generator'
 end
 
 group :test do
