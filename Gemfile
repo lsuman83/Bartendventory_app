@@ -9,7 +9,7 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'thin'
 
 
-group :development do
+group :development, :test do
   gem 'dotenv'
   gem 'shotgun'
   gem 'pry'
