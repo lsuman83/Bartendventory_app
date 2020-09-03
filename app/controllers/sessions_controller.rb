@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
     get "/login" do
 
       if logged_in?
-        erb :"/sessions/login.html"
+        redirect "/"
       else
-        redirect "/login"
+        erb :"/sessions/login.html"
       end
 
     end

@@ -11,4 +11,5 @@ ActiveRecord::Base.establish_connection(
 Dotenv.load
 
 require './app/controllers/application_controller'
+require_relative '../app/models/concerns/slugifiable.rb'
 require_all 'app'

@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
 
   # GET: /users/new
-  get "/users/new" do
+  get "/signup" do
     
     if logged_in?
-      erb :"/users/new.html"
+      redirect "/"
     else
-      redirect "/signup"
+      erb :"/users/new.html"
     end
 
   end
 
   # POST: /users
-  post "/users" do
+  post "/signup" do
 
     @user = User.new(username: params[:username], email: params[:email], password: params[:password])
   
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   # GET: /users/5
-  get "/users/:id" do
+  get "/users/:slug" do
     erb :"/users/show.html"
   end
 

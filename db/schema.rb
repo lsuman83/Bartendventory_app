@@ -11,15 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200901133213) do
+ActiveRecord::Schema.define(version: 20200903221737) do
 
-  create_table "tables", force: :cascade do |t|
-    t.string   "table_name"
-    t.string   "alcohol_categories"
-    t.string   "table_options"
-    t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+  create_table "cabinet_liquors", force: :cascade do |t|
+    t.integer  "cabinet_id"
+    t.integer  "liquor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cabinets", force: :cascade do |t|
+    t.string  "name"
+    t.integer "user_id"
+  end
+
+  create_table "liquors", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "liquor_count"
+    t.float    "liquor_cost"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

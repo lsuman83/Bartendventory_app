@@ -15,3 +15,4 @@
     <% @liquors.each do |liquor| %>
         <input type="checkbox" name="cabinet[landmark_ids][]" id="liquor_<%= liquor.id %>" value="<%= liquor.id %>"><%= liquor.name %><br>
     <% end %>
+</form>
