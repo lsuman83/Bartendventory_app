@@ -16,6 +16,20 @@
   <body>
     <div class="wrapper">
 
+         <nav>
+         <% if !logged_in? %>
+            <a href="/users/new"><button>Sign Up</button></a>
+            <a href="/login"><button>Log In</button></a>
+         <% else %>
+            <form method="POST" action="/logout">
+              <input type="hidden" id="hidden" name="_method" value="delete">
+              <input type="submit" value="Logout">
+            </form>
+         <% end %>
+         
+        </nav>
+
+
         <%= yield %>
 
       <footer class="branding">
