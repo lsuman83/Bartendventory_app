@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
     has_many :tables
     
+    include Slugifiable::InstanceMethods
+    extend Slugifiable::ClassMethods
+
+    
 end
