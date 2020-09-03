@@ -18,8 +18,12 @@
 
          <nav>
          <% if !logged_in? %>
-            <a href="/users/new"><button>Sign Up</button></a>
-            <a href="/login"><button>Log In</button></a>
+            <nav>
+              <a href="/users/new"><button>Sign Up</button></a>
+              <a href="/login"><button>Log In</button></a>
+            </nav>
+
+            <h3>Welcome, <%= currect_user.username %>!</h3>
          <% else %>
             <form method="POST" action="/logout">
               <input type="hidden" id="hidden" name="_method" value="delete">

@@ -4,10 +4,11 @@ class User < ActiveRecord::Base
     validates :username, presence: true, uniqueness: true
     
 
-    has_many :tables
+    has_many :cabinets
+    has_many :liquors, through: :cabinets
     
     include Slugifiable::InstanceMethods
     extend Slugifiable::ClassMethods
 
-    
+
 end

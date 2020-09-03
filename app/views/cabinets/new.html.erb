@@ -1,1 +1,17 @@
+<h2><%= current_user.username %></h2>
 
+
+<h3>Create a new Cabinet</h3>
+
+<form method="POST" action="/cabinets">
+    <label for="cabinet[name]">Name: </label>
+
+    <input type="text" id="cabinet[name]" name="cabinet[name]">
+
+    <br>
+
+    <label for="cabinet[liquor_ids][]"><h3>Liquors</h3></label>
+
+    <% @liquors.each do |liquor| %>
+        <input type="checkbox" name="cabinet[landmark_ids][]" id="liquor_<%= liquor.id %>" value="<%= liquor.id %>"><%= liquor.name %><br>
+    <% end %>

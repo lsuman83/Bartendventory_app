@@ -6,6 +6,8 @@ end
 
 use Rack::MethodOverride
 run ApplicationController
+use LiquorsControllersController
+use Name=liqoursControllersController
 use CabinetsController
 use UsersController
 use SessionsController
