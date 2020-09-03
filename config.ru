@@ -6,5 +6,6 @@ end
 
 use Rack::MethodOverride
 run ApplicationController
-use TablesController
+use CabinetsController
 use UsersController
+use SessionsController
