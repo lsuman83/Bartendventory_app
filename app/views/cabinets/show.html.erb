@@ -1,0 +1,22 @@
+<h2>Cabinet: <em><%= @cabinet.name %></em></h2>
+
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"><%= @cabinet.name %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <th scope="col">Alcohol</th>
+        <th scope="col">Par</th>
+        <th scope="col">Price</th>
+
+        <% @liquors.each do |liquor| %>
+            <th scope="row"><%= liquor.name %></th>
+            <th><%= liquor.liquor_count %></th>
+            <th><%= liquor.liquor_price %></th>
+        <% end %>
+
+    </tbody>
+</table>    

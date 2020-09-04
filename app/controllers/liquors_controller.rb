@@ -2,12 +2,12 @@ class LiquorsController < ApplicationController
 
   # GET: /liquors_controllers
   get "/liquors" do
-    erb :"/liquors_controllers/index.html"
+    erb :"/liquors/index.html"
   end
 
   # GET: /liquors_controllers/new
   get "/liquors/new" do
-    erb :"/liquors_controllers/new.html"
+    erb :"/liquors/new.html"
   end
 
   # POST: /liquors_controllers
