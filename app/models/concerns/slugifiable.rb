@@ -4,7 +4,7 @@ module Slugifiable
 
         def slug
 
-            self.username.downcase.gsub(" ", "-")
+            self.name.downcase.gsub(" ", "-")
 
         end
 

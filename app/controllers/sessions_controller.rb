@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     
     post "/login" do
         
-        @user = User.find_by_username(params[:username])
+        @user = User.find_by_id(params[:id])
         binding.pry
         if @user && @user.authenticate(params[:password])
           session[:id] = @user.id

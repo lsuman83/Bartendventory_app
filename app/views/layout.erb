@@ -23,7 +23,7 @@
               <a href="/login"><button>Log In</button></a>
             </nav>
          <% else %>
-             <h3>Welcome, <%= current_user.username %>!</h3>
+             <h3>Welcome, <%= current_user.name %>!</h3>
             <form method="POST" action="/logout">
               <input type="hidden" id="hidden" name="_method" value="delete">
               <input type="submit" value="Logout">
