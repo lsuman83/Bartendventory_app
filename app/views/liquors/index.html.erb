@@ -1,0 +1,7 @@
+<h3>Liquors</h3>
+
+<ul>
+    <% @liquors.each do |liquor|%>
+      <a href="/liquors/<%= liquor.slug %>"> <li><%= liquor.name %></li>
+    <% end %>
+</ul>

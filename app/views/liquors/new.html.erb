@@ -10,13 +10,13 @@
         <label for="liquor[liquor_count]"><strong>Par: </strong></label>
         <input type="text" name="liquor[liquor_count]">
 
-        <label for="liquor[liquor_price]"><strong>Price: </strong></label>
-        <input type="text" name="liquor[liquor_price]">
+        <label for="liquor[liquor_cost]"><strong>Price: </strong></label>
+        <input type="text" name="liquor[liquor_cost]">
 
-        <input type="submit" value="Create New Cabinet">
+        <input type="submit" value="Add Liquor">
     <% else %>
         <% @liquors.each do |liquor| %>
-            <input type="checkbox" name="cabinet[landmark_ids][]" id="liquor_<%= liquor.id %>" value="<%= liquor.id %>"><%= liquor.name %><br>
+            <input type="checkbox" name="cabinet[liquor_ids][]" id="liquor_<%= liquor.id %>" value="<%= liquor.id %>"><%= liquor.name %><br>
         <% end %>
 
         <h3>Create New Liquor</h3>
@@ -27,8 +27,8 @@
         <label for="liquor[liquor_count]"><strong>Par: </strong></label>
         <input type="text" name="liquor[liquor_count]">
 
-        <label for="liquor[liquor_price]"><strong>Price: </strong></label>
-        <input type="text" name="liquor[liquor_price]">
+        <label for="liquor[liquor_cost]"><strong>Price: </strong></label>
+        <input type="text" name="liquor[liquor_cost]">
 
-        <input type="submit" value="Create New Cabinet">
+        <input type="submit" value="Add Liquor">
     <% end %>

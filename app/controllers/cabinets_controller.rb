@@ -34,11 +34,9 @@ class CabinetsController < ApplicationController
 
         @liquors = Liquor.all
 
-        if @liquors.empty?
-            redirect "/liquors/new"
-        else 
-            erb :'/cabinets/show.html'
-        end
+        
+        erb :'/cabinets/show.html'
+    
 
     end
 
