@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     post "/login" do
         
         @user = User.find_by_name(params[:name])
-        binding.pry
+      
         if @user && @user.authenticate(params[:password])
           session[:id] = @user.id
           redirect "/"

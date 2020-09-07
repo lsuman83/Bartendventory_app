@@ -1,6 +1,7 @@
 <h2>Cabinet: <em><%= @cabinet.name %></em></h2>
 
 <a href="/liquors/new"><button>New Liquor</button></a>
+<a href="/cabinets/new"><button>Create New Cabinet</button></a>
 
 <table>
     <thead>
@@ -16,7 +17,7 @@
         </tr>
 
         <tr>
-            <% @liquors.each do |liquor| %>
+            <% @cabinet.liquors.each do |liquor| %>
                 <th scope="row"><%= liquor.name %></th>
                 <td><%= liquor.liquor_count %></th>
                 <td><%= liquor.liquor_cost %></th>
