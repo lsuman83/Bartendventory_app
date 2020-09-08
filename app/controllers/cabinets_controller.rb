@@ -8,7 +8,6 @@ class CabinetsController < ApplicationController
         end
 
         if logged_in?
-            @user.cabinets = Cabinet.all
             erb :'/cabinets/index.html'
         else
             redirect "/login"

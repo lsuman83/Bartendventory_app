@@ -14,28 +14,24 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
-
-         <nav>
-         <% if !logged_in? %>
-            <nav>
-              <a href="/signup"><button>Sign Up</button></a>
-              <a href="/login"><button>Log In</button></a>
-            </nav>
-         <% else %>
-             <h3>Welcome, <%= current_user.name %>!</h3>
-             <a href="/"><button>Home</button></a>
+    
+    <ul class="sidenav" >
+      <% if !logged_in? %>
+              <li><a href="/signup">Sign Up</a></li>
+              <li><a href="/login">Log In</a></li>
+             
+          <% else %>
+            <h3>Welcome, <%= current_user.name %>!</h3>
             <form method="POST" action="/logout">
               <input type="hidden" id="hidden" name="_method" value="delete">
               <input type="submit" value="Logout">
             </form>
-         <% end %>
-         
-        </nav>
-
+          <% end %>
+            <li><a href="/about">About</a></li>
+          </ul>
 
         <%= yield %>
-
+    <div>
       <footer class="branding">
         <small>&copy; 2020 <strong>BartendventoryApp</strong></small>
       </footer>

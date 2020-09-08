@@ -1,0 +1,20 @@
+<h2>Update Liquor</h2>
+
+
+<h3>Edits for <%= @liquor.name %></h3>
+
+
+<form method="POST" action="/liquors/<%= @liquor.slug %>">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+        
+        <label for="liquor[name]"><strong>Name: </strong></label>
+        <input type="text" name="liquor[name]" id="new_liquor">
+
+        <label for="liquor[liquor_count]"><strong>Par: </strong></label>
+        <input type="text" name="liquor[liquor_count]">
+
+        <label for="liquor[liquor_cost]"><strong>Price: </strong></label>
+        <input type="text" name="liquor[liquor_cost]">
+
+        <input type="submit" value="Edit Liquor">
+    </form>

@@ -20,7 +20,7 @@ class LiquorsController < ApplicationController
     @cabinet = Cabinet.find_by_slug(session[:cabinet_slug])
 
     #binding.pry    
-    if !params[:liquor][:name].empty?
+    if !params[:liquor][:name].empty? 
       @cabinet.liquors << Liquor.create(params[:liquor])
     elsif !params[:cabinet][:liquor_ids].empty?
       params[:cabinet][:liquor_ids].each do |liquor_id|
@@ -28,29 +28,46 @@ class LiquorsController < ApplicationController
       end
     end
 
+    @cabinet.save
+
+
 
     redirect "/liquors"
   end
 
   # GET: /liquors_controllers/5
   get "/liquors/:slug" do
+    binding.pry
     @liquor = Liquor.find_by_slug(params[:slug])
     @cabinet = Cabinet.find_by_slug(session[:cabinet_slug])
+  
     erb :"/liquors/show.html"
   end
 
   # GET: /liquors/5/edit
-  get "/liquors/:id/edit" do
+  get "/liquors/:slug/edit" do
+  
+    @cabinet = Cabinet.find_by_slug(session[:cabinet_slug])
+    @liquor = @cabinet.liquors.find_by_slug(params[:slug])
+    binding.pry
     erb :"/liquors/edit.html"
   end
 
   # PATCH: /liquors_controllers/5
-  patch "/liquors/:id" do
-    redirect "/liquors/:id"
+  patch "/liquors/:slug" do
+    binding.pry
+    @cabinet = Cabinet.find_by_slug(session[:cabinet_slug])
+    @liquor = @cabinet.liquors.find_by_slug(params[:slug])
+    @liquor.update(params[:liquor])
+
+    redirect "/liquors/#{@liquor.slug}"
   end
 
   # DELETE: /liquors_controllers/5/delete
-  delete "/liquors/:id/delete" do
+  delete "/liquors/:slug" do
+    @cabinet = Cabinet.find_by_slug(session[:cabinet_slug])
+    @cabinet.liquors.find_by_slug(params[:slug]).delete
+  
     redirect "/liquors"
   end
 end

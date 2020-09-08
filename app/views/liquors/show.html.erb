@@ -1,5 +1,12 @@
-<h2><%= @liquors.name %></h2>
+<h2><%= @liquor.name %></h2>
 
-<a href="/cabinets/<%= @cabinets.slug %>"><button>Cabinet Inventory</button></a>
+<a href="/cabinets/<%= @cabinet.slug %>"><button>Cabinet Inventory</button></a>
 
+<p><strong>Par: </strong><em><%= @liquor.liquor_count %></em></p>
 <p><strong>Price: </strong><em>$<%= @liquor.liquor_cost %></em></p>
+
+<a href="/liquors/<%= @liquor.slug %>/edit"><button>Edit</button></a>
+<form method="POST" action="/liquors/<%= @liquor.slug %>">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+</form>
