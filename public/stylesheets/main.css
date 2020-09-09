@@ -42,9 +42,17 @@ ul.sidenav li a:hover:not(.active) {
 
 div.content {
 
-  margin-left: 25%;
+  margin-left: 35%;
   padding: 1px 16px;
   height: 1000px;
+
+}
+
+div.subcontent {
+
+  color: navy;
+  text-align: center;
+  text-transform: uppercase;
 
 }
 

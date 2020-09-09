@@ -1,5 +1,7 @@
-<a href="/cabinets/new"><button>New Cabinet</button></a>
+<ul>
+   <% @user.cabinets.each do |cabinet| %>
+      <li><a href="/cabinets/<%= cabinet.slug %>"> <%= cabinet.name %></a></li>
+   <% end %>
+</ul>
 
-<% @user.cabinets.each do |cabinet| %>
-   <a href="/cabinets/<%= cabinet.slug %>"> <%= cabinet.name %></a>
-<% end %>
+<a href="/cabinets/new"><button>New Cabinet</button></a>

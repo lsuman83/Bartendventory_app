@@ -15,6 +15,7 @@ class ApplicationController < Sinatra::Base
 
   end
 
+
   get "/about" do
 
     erb :about
@@ -40,7 +41,7 @@ class ApplicationController < Sinatra::Base
     if !logged_in?
 
       redirect "/login"
-      
+
     end
 
   end

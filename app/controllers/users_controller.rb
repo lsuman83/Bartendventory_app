@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   end
  
-  
+
   get "/logout" do
    
     logout?

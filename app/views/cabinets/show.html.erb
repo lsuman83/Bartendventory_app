@@ -2,6 +2,7 @@
 
 <a href="/cabinets/<%= @cabinet.slug %>/liquors/new"><button>New Liquor</button></a>
 <a href="/cabinets/new"><button>Create New Cabinet</button></a>
+<a href="/cabinets/<%= @cabinet.slug %>/liquors"><button>Cabinet Liquor List</button></a>
 
 <table>
     <thead>
@@ -9,6 +10,7 @@
             <th colspan="2"><%= @cabinet.name %></th>
         </tr>
     </thead>
+    
     <tbody>
         <tr>
             <th scope="col">Alcohol</th>

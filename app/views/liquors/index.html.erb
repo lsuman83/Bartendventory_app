@@ -1,7 +1,9 @@
 <h2>Cabinet: <%= @cabinet.name %></h2>
 
 <h3>Existing Liquors</h3>
+
 <a href="/cabinets/<%= @cabinet.slug %>"><button>Inventory table</button></a>
+
 <ul>
     <% @cabinet.liquors.each do |liquor|%>
       <a href="/cabinets/<%= @cabinet.slug %>/liquors/<%= liquor.slug %>"> <li><%= liquor.name %></li>
