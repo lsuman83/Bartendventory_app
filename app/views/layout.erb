@@ -16,7 +16,9 @@
   <body>
     
     <ul class="sidenav" >
-
+      <% if logged_in? %>
+        <h3>Welcome, <%= current_user.name %>!</h3>
+      <% end %>
       <li><a class="active" href="/">Home</a></li>
 
       <% if !logged_in? %>
@@ -26,11 +28,8 @@
              
       <% else %>
 
-        <h3>Welcome, <%= current_user.name %>!</h3>
-        <form method="POST" action="/logout">
-          <input type="hidden" id="hidden" name="_method" value="delete">
-          <input type="submit" value="Logout">
-        </form>
+        <li><a href="/cabinets">Cabinets</a></li>
+        <li><a href="/logout">Log Out</a></li>
 
       <% end %>
 

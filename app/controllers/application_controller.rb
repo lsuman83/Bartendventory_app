@@ -10,7 +10,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+
     erb :welcome
+
+  end
+
+  get "/about" do
+
+    erb :about
+
   end
 
   private
@@ -30,7 +38,9 @@ class ApplicationController < Sinatra::Base
   def reset_if_not_logged_in?
 
     if !logged_in?
+
       redirect "/login"
+      
     end
 
   end

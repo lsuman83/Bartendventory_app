@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     else
 
       erb :"/users/new.html"
-      
+
     end
 
   end
@@ -32,30 +32,9 @@ class UsersController < ApplicationController
     end
 
   end
-
-  
-  get "/users/:slug" do
-
-    erb :"/users/show.html"
-
-  end
-
-
-  get "/users/:id/edit" do
-
-    erb :"/users/edit.html"
-
-  end
-
-  
-  patch "/users/:id" do
-
-    redirect "/users/:id"
-
-  end
-
  
-  delete "/logout" do
+  
+  get "/logout" do
    
     logout?
 
