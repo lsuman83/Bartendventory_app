@@ -1,6 +1,7 @@
 class CabinetsController < ApplicationController
 
     get "/cabinets" do
+
         @user = current_user
        
         if @user && @user.cabinets.empty?
@@ -23,9 +24,12 @@ class CabinetsController < ApplicationController
     end
 
     post "/cabinets" do
-        @user = current_user
+
+       @user = current_user
        @user.cabinets << Cabinet.create(name: params[:cabinet][:name])
+
        redirect "/cabinets/#{@user.cabinets.last.slug}"
+
     end
 
     get "/cabinets/:slug" do
@@ -34,12 +38,12 @@ class CabinetsController < ApplicationController
         
         erb :'/cabinets/show.html'
     
-
     end
 
     get "/cabinets/:slug/edit" do
         
         @cabinet = Cabinet.find_by_slug(params[:slug])
+        
         erb :'/cabinets/edit.html'
 
     end
