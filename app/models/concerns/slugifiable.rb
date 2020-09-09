@@ -4,7 +4,7 @@ module Slugifiable
 
         def slug
 
-            self.name.downcase.gsub(" ", "-")
+            self.name.downcase.gsub(" ", "-").concat("-#{self.id}")
 
         end
 
@@ -14,7 +14,8 @@ module Slugifiable
 
         def find_by_slug(slug)
 
-            self.all.find{|s| s.slug == slug}
+            id = slug.split("-").last 
+            self.find_by_id(id)
 
         end
 

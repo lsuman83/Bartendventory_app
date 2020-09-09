@@ -5,4 +5,11 @@ class Cabinet < ActiveRecord::Base
 
     include Slugifiable::InstanceMethods
     extend Slugifiable::ClassMethods
+
+    def remove(liquor)
+
+        cabinet_liquor = self.cabinet_liquors.find_by(liquor_id: liquor.id).destroy
+
+    end
+
 end

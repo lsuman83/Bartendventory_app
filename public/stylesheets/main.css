@@ -1,115 +1,81 @@
-@media screen {
-  /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+body {
 
-  html, body {
-    height: 100%;
+  margin: 0;
+
+}
+
+ul.sidenav  {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #A4A4A4;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+
+}
+
+ul.sidenav li a {
+
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+
+}
+
+ul.sidenav li a.active {
+
+  background-color: #04B404;
+  color: white;
+
+}
+
+ul.sidenav li a:hover:not(.active) {
+
+  background-color: #555;
+  color: white;
+
+}
+
+div.content {
+
+  margin-left: 25%;
+  padding: 1px 16px;
+  height: 1000px;
+
+}
+
+@media screen and (max-width: 900px) {
+  ul.sidenav {
+    
     width: 100%;
+    height: auto;
+    position: relative;
+
   }
 
-  /* --- Welcome Page Styles --- */
-  body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
-  }
+  ul.sidenav li a {
 
-  .wrapper {
-    background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
-  }
-
-  h1 {
-    font-size: 36px;
-    line-height: 54px;
-  }
-
-  h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px;
-  }
-
-  h3 {
-    font-size: 18px;
-    line-height: 36px;
-  }
-
-  p {
-    margin-bottom: 18px;
-  }
-
-  .main {
-    overflow: hidden;
-  }
-
-  .content {
     float: left;
-    width: 60%; /* 480px / 800px */
+    padding: 15px;
+
   }
 
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
+  div.content {
 
-  .sidebar ul {
-    font-size: 14px;
-  }
+    margin-left: 0;
 
-  .branding {
-    clear: both;
-  }
-
-  footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .wrapper {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    width: auto;
-  }
+@media screen and (max-width: 400px) {
+  ul.sidenav li a {
 
-  .content, .sidebar {
+    text-align: center;
     float: none;
-    width: 100%;
-  }
 
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
-  }
-
-  h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 24px;
   }
 }

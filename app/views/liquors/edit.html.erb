@@ -4,7 +4,7 @@
 <h3>Edits for <%= @liquor.name %></h3>
 
 
-<form method="POST" action="/liquors/<%= @liquor.slug %>">
+<form method="POST" action="/cabinets/<%= @cabinet.slug %>/liquors/<%= @liquor.slug %>">
     <input type="hidden" id="hidden" name="_method" value="patch">
         
         <label for="liquor[name]"><strong>Name: </strong></label>

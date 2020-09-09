@@ -31,8 +31,6 @@ class CabinetsController < ApplicationController
     get "/cabinets/:slug" do
 
         @cabinet = Cabinet.find_by_slug(params[:slug])
-
-        session[:cabinet_slug] = params[:slug]
         
         erb :'/cabinets/show.html'
     

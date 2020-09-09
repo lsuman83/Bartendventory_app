@@ -16,20 +16,29 @@
   <body>
     
     <ul class="sidenav" >
-      <% if !logged_in? %>
-              <li><a href="/signup">Sign Up</a></li>
-              <li><a href="/login">Log In</a></li>
-             
-          <% else %>
-            <h3>Welcome, <%= current_user.name %>!</h3>
-            <form method="POST" action="/logout">
-              <input type="hidden" id="hidden" name="_method" value="delete">
-              <input type="submit" value="Logout">
-            </form>
-          <% end %>
-            <li><a href="/about">About</a></li>
-          </ul>
 
+      <li><a class="active" href="/">Home</a></li>
+
+      <% if !logged_in? %>
+        
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Log In</a></li>
+             
+      <% else %>
+
+        <h3>Welcome, <%= current_user.name %>!</h3>
+        <form method="POST" action="/logout">
+          <input type="hidden" id="hidden" name="_method" value="delete">
+          <input type="submit" value="Logout">
+        </form>
+
+      <% end %>
+
+        <li><a href="/about">About</a></li>
+
+    </ul>
+    <div class="content">
+        <h1>Bartendventory</h1>
         <%= yield %>
     <div>
       <footer class="branding">
