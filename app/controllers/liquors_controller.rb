@@ -22,7 +22,7 @@ class LiquorsController < ApplicationController
   
   post "/cabinets/:cabinet_slug/liquors" do
   
-    @cabinet = Cabinet.find_by_slug(session[:cabinet_slug])
+    @cabinet = Cabinet.find_by_slug(params[:cabinet_slug])
 
 
     if !params[:liquor][:name].empty? 

@@ -29,7 +29,7 @@
              
       <% else %>
 
-        <li><a class="active" href="/<%= current_user.name %>">Home</a></li>
+        <li><a class="active" href="/">Home</a></li>
         <li><a href="/cabinets">Cabinets</a></li>
         <li><a href="/logout">Log Out</a></li>
 
@@ -40,8 +40,9 @@
     </ul>
     <div class="content">
         <h1>Bartendventory</h1>
-        <%= yield %>
     <div>
+
+    <%= yield %>
       <footer class="branding">
         <small>&copy; 2020 <strong>BartendventoryApp</strong></small>
       </footer>
