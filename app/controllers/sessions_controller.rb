@@ -21,7 +21,13 @@ class SessionsController < ApplicationController
           erb :'/sessions/login.html'
         end
     
-      end
+    end
+
+    get "/logout" do
+   
+      logout
+  
+    end
 
 
 end

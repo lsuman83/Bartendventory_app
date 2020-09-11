@@ -43,27 +43,33 @@ ul.sidenav li a:hover:not(.active) {
 
 div.content {
 
+
   margin-left: 25%;
   margin-right: 15%;
   padding: 1px 16px;
-  height: 1000px;
+  height: 700px;
 
 }
 
 div.content h1 {
 
-  text-align: center;
+  margin-left: 300px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  tex
 
 }
 
 div.about-img img{
 
-  width: 100px;
-  float: left;
-  margin-left: 10px;
+  width: 200px;
+  height: 200px;
 
+}
+
+div.about-img p {
+
+  margin-left: 10px;
+  margin-bottom: 140px;
+  line-height: 2;
 }
 
 div.subcontent {
@@ -72,13 +78,13 @@ div.subcontent {
   vertical-align: middle;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 200px
 
 }
 
 div footer.branding {
 
-  text-align: center;
-  margin-top: 500px;
+  margin-left: 700px;
 
 }
 

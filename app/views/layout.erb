@@ -14,37 +14,42 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    
-    <ul class="sidenav" >
-      <% if logged_in? %>
-        <h3>Welcome, <%= current_user.name %>!</h3>
-      <% end %>
+
+    <div>  
+      <ul class="sidenav" >
+
+        <% if logged_in? %>
+          <h3>Welcome, <%= current_user.name %>!</h3>
+        <% end %>
       
 
-      <% if !logged_in? %>
+        <% if !logged_in? %>
 
-        <li><a class="active" href="/">Home</a></li>  
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/login">Log In</a></li>
+          <li><a class="active" href="/">Home</a></li>  
+          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="/login">Log In</a></li>
              
-      <% else %>
+        <% else %>
 
-        <li><a class="active" href="/">Home</a></li>
-        <li><a href="/cabinets">Cabinets</a></li>
-        <li><a href="/logout">Log Out</a></li>
+          <li><a class="active" href="/">Home</a></li>
+          <li><a href="/cabinets">Cabinets</a></li>
+          <li><a href="/logout">Logout</li>
+  
+        <% end %>
 
-      <% end %>
+          <li><a href="/about">About</a></li>
 
-        <li><a href="/about">About</a></li>
-
-    </ul>
+      </ul>
+    </div>
+    
     <div class="content">
-        <h1>Bartendventory</h1>
+       <h1>Bartendventory</h1>
+       <%= yield %>
+    </div>
+    
     <div>
-
-    <%= yield %>
       <footer class="branding">
-        <small>&copy; 2020 <strong>BartendventoryApp</strong></small>
+        <small>&copy; 2020 <strong>BartendventoryApp</strong> by <strong><em>Sean Bordelon</em></strong></small>
       </footer>
     </div>
 
