@@ -18,6 +18,8 @@ class CabinetsController < ApplicationController
 
     get "/cabinets/new" do
 
+        redirect "/login" if !logged_in?
+
         @cabinets = Cabinet.all
         erb :'/cabinets/new.html'
 
@@ -41,6 +43,8 @@ class CabinetsController < ApplicationController
     end
 
     get "/cabinets/:slug/edit" do
+
+        redirect "/login" if !logged_in?
         
         @cabinet = Cabinet.find_by_slug(params[:slug])
         
@@ -55,6 +59,18 @@ class CabinetsController < ApplicationController
         @cabinet.update(params[:cabinet])
 
         redirect "/cabinets/#{@cabinet.slug}"
+
+    end
+
+    delete "/cabinets/:slug" do
+
+        @user = current_user
+
+        @cabinet = @user.cabinets.find_by_slug(params[:slug])
+
+        @cabinet.delete
+
+        redirect "/cabinets"
 
     end
 

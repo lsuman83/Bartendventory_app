@@ -3,6 +3,8 @@ class LiquorsController < ApplicationController
   
   get "/cabinets/:cabinet_slug/liquors" do
 
+    redirect "/login" if !logged_in?
+
     @cabinet = Cabinet.find_by_slug(params[:cabinet_slug])
     
     erb :"/liquors/index.html"
@@ -11,6 +13,8 @@ class LiquorsController < ApplicationController
 
   
   get "/cabinets/:cabinet_slug/liquors/new" do
+
+    redirect "/login" if !logged_in?
 
     @liquors = Liquor.all
     @cabinet = Cabinet.find_by_slug(params[:cabinet_slug])
@@ -41,6 +45,8 @@ class LiquorsController < ApplicationController
 
   
   get "/cabinets/:cabinet_slug/liquors/:slug" do
+
+    redirect "/login" if !logged_in?
     
     @liquor = Liquor.find_by_slug(params[:slug])
     @cabinet = Cabinet.find_by_slug(params[:cabinet_slug])
@@ -51,6 +57,8 @@ class LiquorsController < ApplicationController
 
   
   get "/cabinets/:cabinet_slug/liquors/:slug/edit" do
+
+    redirect "/login" if !logged_in?
   
     @cabinet = Cabinet.find_by_slug(params[:cabinet_slug])
     @liquor = @cabinet.liquors.find_by_slug(params[:slug])

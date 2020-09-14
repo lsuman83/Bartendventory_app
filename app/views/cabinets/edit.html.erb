@@ -1,4 +1,4 @@
-<h1>Update Cabinet</h1>
+<h2>Update <em><%= @cabinet.name %></em> Cabinet</h1>
 
 <form method="POST" action="/cabinets/<%= @cabinet.slug %>">
     <input type="hidden" id="hidden" name="_method" value="patch">
