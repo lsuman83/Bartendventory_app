@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
           session[:id] = @user.id
           redirect "/"
         else
+          @error = "Invalid username or password"
           erb :'/sessions/login.html'
         end
     
