@@ -1,10 +1,23 @@
-<h2><%= @user.name %>'s Cabinets:</h2>
-<ul>
-   <p>
-      <% @user.cabinets.each do |cabinet| %>
-         <li><a href="/cabinets/<%= cabinet.slug %>"> <%= cabinet.name %></a></li>
-      <% end %>
-   </p>
-</ul>
+<div class="main-cabinets-page">
+   <h2><%= @user.name %>'s Cabinets:</h2>
 
-<a href="/cabinets/new"><button>New Cabinet</button></a>
+   <div class="dropdown">
+      <button class="dropbtn">Cabinet Options
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+         <a href="/cabinets/new">Create New Cabinet</a>
+      </div>
+   </div>
+
+
+
+   <ul>
+      <p>
+         <% @user.cabinets.each do |cabinet| %>
+            <li><a href="/cabinets/<%= cabinet.slug %>"> <%= cabinet.name %></a></li>
+         <% end %>
+      </p>
+   </ul>
+
+</div>

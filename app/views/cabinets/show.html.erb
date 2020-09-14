@@ -1,13 +1,22 @@
 <h2>Cabinet: <em><%= @cabinet.name %></em></h2>
 
-<a href="/cabinets/<%= @cabinet.slug %>/liquors/new"><button>New Liquor</button></a>
-<a href="/cabinets/new"><button>Create New Cabinet</button></a>
-<a href="/cabinets/<%= @cabinet.slug %>/liquors"><button>Cabinet Liquor List</button></a>
 
-<table>
+<div class="dropdown">
+    <button class="dropbtn">Cabinet Options
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href="/cabinets/<%= @cabinet.slug %>/liquors/new">Add New Liquor</a>
+        <a href="/cabinets/new">Create New Cabinet</a>
+        <a href="/cabinets/<%= @cabinet.slug %>/liquors">Liquor List</a>
+    </div>
+</div>
+
+
+<table id="liquors" width="100%">
     <thead>
         <tr>
-            <th colspan="2"><%= @cabinet.name %></th>
+            <th colspan="3"><%= @cabinet.name %></th>
         </tr>
     </thead>
     
@@ -18,12 +27,14 @@
             <th scope="col">Price</th>
         </tr>
 
-        <tr>
+        
             <% @cabinet.liquors.each do |liquor| %>
-                <th scope="row"><%= liquor.name %></th>
-                <td><%= liquor.liquor_count %></th>
-                <td><%= liquor.liquor_cost %></th>
+                <tr>
+                    <td scope="row"><%= liquor.name %></td>
+                    <td><%= liquor.liquor_count %></td>
+                    <td><%= liquor.liquor_cost %></td>
+                </tr>
             <% end %>
-        </tr>
+        
     </tbody>
 </table>    

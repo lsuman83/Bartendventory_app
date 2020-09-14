@@ -1,6 +1,17 @@
+<div class="dropdown">
+    <button class="dropbtn">Cabinet Options
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href="/cabinets/<%= @cabinet.slug %>">Inventory table</a>
+        <a href="/cabinets/new">Create New Cabinet</a>
+        <a href="/cabinets/<%= @cabinet.slug %>/liquors/new">Add New Liquor</a>
+        <a href="/cabinets/<%= @cabinet.slug %>/liquors">Liquor List</a>
+    </div>
+</div>
+
 <h2><%= @liquor.name %></h2>
 
-<a href="/cabinets/<%= @cabinet.slug %>"><button>Cabinet Inventory</button></a>
 
 <p><strong>Par: </strong><em><%= @liquor.liquor_count %></em></p>
 <p><strong>Price: </strong><em>$<%= @liquor.liquor_cost %></em></p>

@@ -1,11 +1,21 @@
+<div class="dropdown">
+    <button class="dropbtn">Cabinet Options
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+        <a href="/cabinets/<%= @cabinet.slug %>">Inventory table</a>
+        <a href="/cabinets/new">Create New Cabinet</a>
+        <a href="/cabinets/<%= @cabinet.slug %>/liquors/new">Add New Liquor</a>
+    </div>
+</div>
+
 <h2>Cabinet: <%= @cabinet.name %></h2>
 
 <h3>Existing Liquors</h3>
 
-<a href="/cabinets/<%= @cabinet.slug %>"><button>Inventory table</button></a>
 
 <ul>
     <% @cabinet.liquors.each do |liquor|%>
-      <a href="/cabinets/<%= @cabinet.slug %>/liquors/<%= liquor.slug %>"> <li><%= liquor.name %></li>
+      <a href="/cabinets/<%= @cabinet.slug %>/liquors/<%= liquor.slug %>"> <li><%= liquor.name %></li></a>
     <% end %>
 </ul>
