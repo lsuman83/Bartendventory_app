@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       redirect "/"
 
     else
-
+      @error = "Invalid email, username or password"
       erb :'/users/new.html'
 
     end
