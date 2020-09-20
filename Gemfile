@@ -7,6 +7,7 @@ gem 'rake'
 gem 'require_all'
 gem 'thin'
 gem 'rails_12factor'
+gem 'foreman'
 gem 'pg', '0.20'
 gem 'bcrypt'
 
