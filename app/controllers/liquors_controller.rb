@@ -69,10 +69,10 @@ class LiquorsController < ApplicationController
 
 
   patch "/cabinets/:cabinet_slug/liquors/:slug" do
-  
+    
     @cabinet = Cabinet.find_by_slug(params[:cabinet_slug])
     @liquor = @cabinet.liquors.find_by_slug(params[:slug])
-
+  
     @liquor.update(params[:liquor])
 
     redirect "/cabinets/#{@cabinet.slug}/liquors/#{@liquor.slug}"
